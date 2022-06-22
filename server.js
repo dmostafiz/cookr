@@ -8,13 +8,13 @@ fastify.register(FastifyNextJs, {
     logLevel: 'debug',
     noServerAssets: false
 }).after(() => {
-    
+
     fastify.get('/api', function (req, res) {
         res.send('Hello World')
     })
 
 
-    fastify.next('/*')
+    fastify.next('/api')
 })
 
 
