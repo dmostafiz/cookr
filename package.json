@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nodemon server.js",
-    "build": "next build",
+    "build": "cross-env NODE_ENV=production next build && cross-env NODE_ENV=production node server.js",
     "build:prod": "cross-env NODE_ENV=production next build",
     "start": "npm run build:prod && cross-env NODE_ENV=production node server.js",
     "lint": "next lint"
