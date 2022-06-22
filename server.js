@@ -9,11 +9,12 @@ fastify.register(FastifyNextJs, {
     noServeAssets: false
 }).after(() => {
 
-    fastify.get('/api', function (req, res) {
+    fastify.get('/fpi', function (req, res) {
         res.send('Hello World')
     })
 
-
+    fastify.next('/fpi/*', { method: 'GET' })
+    fastify.next('/fpi/*', { method: 'POST' })
     fastify.next('/*')
 })
 
