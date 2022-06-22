@@ -9,15 +9,13 @@ fastify.register(FastifyNextJs, {
     noServeAssets: false
 }).after(() => {
 
-    fastify.get('/fpi', function (req, res) {
-        res.send('Hello World')
-    })
-
-    fastify.next('/fpi/*', { method: 'GET' })
-    fastify.next('/fpi/*', { method: 'POST' })
+    
     fastify.next('/*')
 })
 
+fastify.get('/fpi', function (req, res) {
+    res.send('Hello World')
+})
 
 const PORT = process.env.PORT || 3333
 
