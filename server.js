@@ -9,7 +9,6 @@ fastify.register(FastifyNextJs, {
     noServeAssets: false
 }).after(() => {
 
-    
     fastify.next('/*')
 })
 
