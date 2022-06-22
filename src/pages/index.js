@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Documentation from '@Components/Documentation'
-import styles from '@styles/Home.module.css'
+import styles from '../../styles/Home.module.css'
+import { Documentation } from 'Components/Documentation';
 
 export default function Home() {
   return (
