@@ -9,12 +9,12 @@ fastify.register(FastifyNextJs, {
     noServeAssets: false
 }).after(() => {
 
-    fastify.get('/*', function (req, res) {
+    fastify.get('/api', function (req, res) {
         res.send('Hello World')
     })
 
 
-    fastify.next('/api')
+    fastify.next('/*')
 })
 
 
