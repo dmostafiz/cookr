@@ -16,8 +16,16 @@ fastify.get('/api', function (req, res) {
     res.send('Hello World')
 })
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 3001
 
-fastify.listen(PORT, () => {
-    fastify.log.info(`Server listening on http://localhost:${PORT}`)
+
+fastify.listen({ port: PORT, host: '0.0.0.0' }, function (err, address) {
+    
+    if (err) {
+        fastify.log.error(err)
+        process.exit(1)
+    }
+
+    fastify.log.info(`server listening on ${address}`)
+
 })
