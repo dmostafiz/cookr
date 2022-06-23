@@ -13,6 +13,7 @@
   "dependencies": {
     "@fastify/nextjs": "^8.0.0",
     "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
     "fastify": "^4.1.0",
     "fastify-nextjs": "^7.3.0",
     "next": "^12.1.6",
