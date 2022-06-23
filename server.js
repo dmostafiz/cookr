@@ -3,13 +3,11 @@ const FastifyNextJs = require('fastify-nextjs')
 
 const fastify = Fastify({ logger: false, pluginTimeout: 20000 })
 
-
 fastify.register(FastifyNextJs, {
     dev: process.env.NODE_ENV !== 'production',
     logLevel: 'debug',
-    noServeAssets: false
+    noServeAssets: true
 }).after(() => {
-    
     fastify.next('/*')
 })
 
