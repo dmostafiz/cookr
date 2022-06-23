@@ -4,10 +4,10 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js",
+    "dev": "nodemon ./server/server.js",
     "build": "next build",
     "build:prod": "cross-env NODE_ENV=production next build",
-    "start": "npm run build:prod && cross-env NODE_ENV=production node server.js"
+    "start": "npm run build:prod && cross-env NODE_ENV=production node ./server/server.js"
   },
   "dependencies": {
     "@fastify/nextjs": "^8.0.0",

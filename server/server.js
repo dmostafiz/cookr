@@ -14,7 +14,7 @@ fastify.register(FastifyNextJs, {
 
 fastify.get('/api', function (req, res) {
 
-    res.send({message: 'Hello World nice to meet you'})
+    res.send({message: 'Hello World - i am a api'})
 
 })
 
