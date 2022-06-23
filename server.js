@@ -13,7 +13,9 @@ fastify.register(FastifyNextJs, {
 
 
 fastify.get('/api', function (req, res) {
-    res.send('Hello World nice to meet you')
+
+    res.send({message: 'Hello World nice to meet you'})
+
 })
 
 const PORT = process.env.PORT || 3001

@@ -1,9 +1,30 @@
+import axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import Documentation from 'src/Components/Documentation'
 import styles from '../../styles/Home.module.css'
 
 export default function Home() {
+
+  const [message, setMessage] = useState('')
+
+  useEffect( () => {
+
+    async function fetchData() {
+
+      const res = await axios.get('/api')
+  
+      console.log('API CALL: ', res)
+
+      setMessage(res.data.message)
+      
+    }
+
+    fetchData();
+
+  }, [])
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +37,8 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <p>API DATA: {message}</p>
 
         <p className={styles.description}>
           Get started by editing{' '}

@@ -7,10 +7,11 @@
     "dev": "nodemon server.js",
     "build": "next build",
     "build:prod": "cross-env NODE_ENV=production next build",
-    "start": "npm run build:prod && node server.js"
+    "start": "npm run build:prod && cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
     "@fastify/nextjs": "^8.0.0",
+    "axios": "^0.27.2",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.1",
     "fastify": "^4.1.0",
