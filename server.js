@@ -3,20 +3,20 @@ const FastifyNextJs = require('fastify-nextjs')
 
 const fastify = Fastify({ logger: false, pluginTimeout: 20000 })
 
-fastify.get('/hello', function (req, res) {
-    res.send('Hello World')
-})
 
 fastify.register(FastifyNextJs, {
     dev: process.env.NODE_ENV !== 'production',
     logLevel: 'debug',
     noServeAssets: false
 }).after(() => {
-
+    
     fastify.next('/*')
 })
 
 
+fastify.get('/api', function (req, res) {
+    res.send('Hello World')
+})
 
 const PORT = process.env.PORT || 3333
 
